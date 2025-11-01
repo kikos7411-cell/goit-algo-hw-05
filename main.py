@@ -42,11 +42,11 @@ def show_phone(args, contacts):
 
 @input_error
 def show_all(contacts):
-    # if not contacts:
-    #     return "No contacts found."
-    # else:
-    result = "\n".join(f"{name}: {phone}" for name, phone in contacts.items())
-    return result
+    if not contacts:
+        return "No contacts found."
+    else:
+        result = "\n".join(f"{name}: {phone}" for name, phone in contacts.items())
+        return result
 
 def main():
     contacts = {}
