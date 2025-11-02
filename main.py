@@ -15,7 +15,7 @@ def input_error(func):
             return "Contact not found."
     return inner
 
-
+@input_error
 def parse_input(user_input):
     cmd, *args = user_input.split()
     cmd = cmd.strip().lower()
@@ -46,6 +46,7 @@ def show_all(contacts):
         return "No contacts found."
     else:
         result = "\n".join(f"{name}: {phone}" for name, phone in contacts.items())
+        
         return result
 
 def main():
