@@ -6,7 +6,7 @@ text = ("100.00 Загальний дохід працівника склада�
                         " 27.45 і 324.00 доларів.")
 
 def generator_numbers(text: str):
-    for num in re.findall(r" "'\d+\.\d+'" ", text):
+    for num in re.findall(r" \d+\.\d+ ", text):
         yield float(num)
 
 def sum_profit(text: str, func: Callable):
